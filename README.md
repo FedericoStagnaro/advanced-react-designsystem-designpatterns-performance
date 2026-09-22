@@ -1,175 +1,70 @@
-🚀 What You Will Learn
+# Getting Started with Create React App
 
-This module is focused on taking your React skills to an advanced level, covering the patterns, techniques, and architectural decisions commonly expected from senior React developers.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-📚 Table of Contents
+## Available Scripts
 
-Advanced Component and Layout Patterns
+In the project directory, you can run:
 
-Performance Optimization
+### `npm start`
 
-Advanced React Hooks and Concepts
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Advanced State Management Techniques
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-Scalable Architecture
+### `npm test`
 
-API Requests and API State Management
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Design Systems and Encapsulated Styles
+### `npm run build`
 
-Clean Code Tips
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Advanced TypeScript
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. 🧩 Advanced Component and Layout Patterns
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-As a senior software developer, I have identified the topics covered in this module as crucial elements when interviewing React developer candidates.
+### `npm run eject`
 
-These patterns can help bridge the gap between being a junior or intermediate developer and becoming a senior React practitioner.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-By completing this section, you'll explore some of React's most essential component and design patterns, helping you build applications that are more reusable, maintainable, and scalable.
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-2. ⚡ Performance Optimization
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-Explore essential techniques for improving and optimizing the performance of your React applications.
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-You'll learn how to make your applications faster, more efficient, and more responsive through techniques such as:
+## Learn More
 
-🔄 Optimizing re-renders
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-📜 Long-list virtualization
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-⏱️ Throttling
+### Code Splitting
 
-⏳ Debouncing
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-📦 Code splitting
+### Analyzing the Bundle Size
 
-💤 Lazy loading
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-And more!
+### Making a Progressive Web App
 
-3. 🪝 Advanced React Hooks and Concepts
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Dive deeper into advanced React concepts and hooks and learn when and why to use them.
+### Advanced Configuration
 
-These techniques will help you tackle more complex problems and make better architectural decisions when building React applications.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-4. 🗃️ Advanced State Management Techniques
+### Deployment
 
-Master advanced state management techniques that allow you to easily manage, share, and reuse stateful data throughout your applications.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-You'll explore patterns for managing state in a:
+### `npm run build` fails to minify
 
-Clean way
-
-Readable way
-
-Scalable way
-
-Maintainable way
-
-You'll also work with:
-
-⚛️ React Hooks
-
-🧩 Immer
-
-🌐 Context API
-
-5. 🏗️ Scalable Architecture
-
-Learn how to design and structure scalable React applications that are easy to:
-
-Maintain
-
-Extend
-
-Refactor
-
-Understand
-
-The goal is to develop architectural patterns that continue to work as your application and development team grow.
-
-6. 🌐 API Requests and API State Management
-
-Learn advanced patterns for managing asynchronous operations and API-related state at scale.
-
-You'll explore:
-
-🔄 Async operations
-
-📡 API state management
-
-❌ Request cancellation
-
-🏗️ Scalable API layers
-
-🔎 React Query
-
-You'll learn how to build a flexible and scalable API layer and combine it effectively with React Query.
-
-7. 🎨 Design Systems and Encapsulated Styles
-
-Managing large-scale projects isn't just about building components.
-
-Developing an ever-growing collection of components without losing consistency requires a solid design system that guarantees the reusability and maintainability of every element.
-
-In this section, you'll:
-
-Learn the fundamental concepts and theory behind design systems.
-
-Build basic components in Figma.
-
-Create an extensible design foundation in ReactJS.
-
-Learn how to design and develop a clean, reusable component library.
-
-Explore techniques for encapsulating styles.
-
-The main focus will be on creating reusable components while keeping styles properly encapsulated across your component library.
-
-8. 🧹 Clean Code Tips
-
-Learn practical techniques for writing cleaner and more maintainable React code.
-
-This section explores concepts such as:
-
-Component design
-
-Props
-
-Context API
-
-Performance considerations
-
-Avoiding common patterns that can lead to unnecessary re-renders
-
-The goal is to help you write React code that is easier to understand, maintain, and scale.
-
-9. 🔷 Advanced TypeScript
-
-Last but not least, we'll explore TypeScript the React way.
-
-You'll learn how to effectively use TypeScript with React components while ensuring that your applications remain strongly typed and maintainable.
-
-Topics include:
-
-🔷 TypeScript with React components
-
-🪝 Typed React Hooks
-
-🌐 Typed Context API
-
-📦 Typed props
-
-🛡️ Type-safe application architecture
-
-By the end of this section, you'll be able to build more resilient, scalable, and type-safe React applications.
-
-🎯 Final Goal
-
-By completing this module, you'll have a deeper understanding of the concepts required to build production-ready, scalable, performant, and maintainable React applications.
-
-From writing React components to designing scalable React systems. 🚀
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
