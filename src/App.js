@@ -1,4 +1,6 @@
 // import { CurrentUserLoader } from "./components/current-user-loader";
+import { BookInfo } from "./components/book-info";
+import { ResourceLoader } from "./components/resource-loader";
 import { UserInfo } from "./components/user-info";
 import { UserLoader } from "./components/user-loader";
 
@@ -6,15 +8,21 @@ import { UserLoader } from "./components/user-loader";
 function App() {
   return (
     <>
-      <UserLoader userId={1}>
+      <ResourceLoader
+        resourceUrl={"/users/3"}
+        resourceName={"user"}
+
+      >
         <UserInfo />
-      </UserLoader>
-      <UserLoader userId={2}>
-        <UserInfo />
-      </UserLoader>
-      <UserLoader userId={3}>
-        <UserInfo />
-      </UserLoader>
+      </ResourceLoader>
+
+      <ResourceLoader
+        resourceUrl={"/books/3"}
+        resourceName={"book"}
+
+      >
+        <BookInfo />
+      </ResourceLoader>
     </>
   );
 }
