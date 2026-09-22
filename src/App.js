@@ -1,18 +1,13 @@
+import { CurrentUserLoader } from "./components/current-user-loader";
+import { UserInfo } from "./components/user-info";
 
-// const ContentComponent = ({ children, title, backgroundColor }) => {
-//   return (
-//     <>
-//       <div style={{ backgroundColor }}>
-//         <h2>{title}</h2>
-//         {children}
-//       </div>
-//     </>
-//   )
-// }
 
 function App() {
   return (
     <>
+      <CurrentUserLoader>
+        <UserInfo />
+      </CurrentUserLoader>
     </>
   );
 }
