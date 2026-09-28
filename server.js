@@ -73,9 +73,9 @@ app.post("/users/:id", (req, res) => {
   const { id } = req.params;
   const { user: editedUser } = req.body;
 
-  users = users.map((user) => (user.id === id ? editedUser : user));
+  users = users.map((user) => (user.id === Number(id) ? editedUser : user));
 
-  res.json(users.find((user) => user.id === id));
+  res.json(users.find((user) => user.id === Number(id)));
 });
 
 app.get("/books", (req, res) => res.json(books));
