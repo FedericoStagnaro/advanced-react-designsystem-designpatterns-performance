@@ -1,29 +1,23 @@
-// import { CurrentUserLoader } from "./components/current-user-loader";
-import axios from "axios";
-import { UserInfo } from "./components/user-info";
-import { DataSourceRender } from "./components/data-source-render";
+import { RecursiveComponent } from "./components/recursive";
 
-const getDataFromServer = async (url) => {
-  const response = await axios.get(url)
-  return response.data;
-}
+const myNestedObject = {
+  key1: "value1",
+  key2: {
+    innerKey1: "innerValue1",
+    innerKey2: {
+      innerInnerKey1: "innerInnerValue1",
+      innerInnerKey2: "innerInnerValue2"
+    }
 
-const getDataFromLocalStorage = (key) => () => {
-  return localStorage.getItem(key)
+  },
+  key3: "{}",
+
 }
 
 function App() {
   return (
     <>
-      <DataSourceRender
-        getData={async () => getDataFromServer("/users/3")}
-        render={(resource) => <UserInfo user={resource} />}
-      />
-
-      <DataSourceRender
-        getData={async () => getDataFromLocalStorage("test")}
-        render={(msg) => <p>{msg}</p>}
-      />
+      <RecursiveComponent data={myNestedObject} />
     </>
   );
 }
