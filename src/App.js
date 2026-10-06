@@ -1,9 +1,9 @@
-import { ReactPortal } from "./components/react-portal";
+import { LayoutEffectExample } from "./components/layout-effect";
 
 function App() {
   return (
     <>
-      <ReactPortal />
+      <LayoutEffectExample/>
     </>
   );
 }
