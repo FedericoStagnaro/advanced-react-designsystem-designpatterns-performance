@@ -1,10 +1,10 @@
-import { ReactPortal } from "./components/react-portal";
+import { Child } from "./components/child";
 
 
 function App() {
   return (
     <>
-      <ReactPortal/>
+      <Child/>
     </>
   );
 }
