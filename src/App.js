@@ -1,9 +1,9 @@
-import { LayoutEffectExample } from "./components/layout-effect";
+import { UseCallbackAsRefExample } from "./components/use-callback-as-ref";
 
 function App() {
   return (
     <>
-      <LayoutEffectExample/>
+      <UseCallbackAsRefExample/>
     </>
   );
 }
