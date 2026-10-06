@@ -1,9 +1,9 @@
-import { UseCallbackAsRefExample } from "./components/use-callback-as-ref";
+import { UseDeferredValueExample } from "./components/use-deferred-value";
 
 function App() {
   return (
     <>
-      <UseCallbackAsRefExample/>
+      <UseDeferredValueExample/>
     </>
   );
 }
