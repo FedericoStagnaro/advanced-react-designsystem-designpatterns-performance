@@ -7,9 +7,9 @@ import { createPortal } from "react-dom";
  * @returns 
  */
 export const ReactPortal = () => {
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     return (
-        <div style={{ position: "absolute", marginTop: "200px" }}>
+        <div onClick={() => console.log("Outer div")} style={{ position: "absolute", marginTop: "200px" }}>
             <h1>Other Content</h1>
             <button onClick={() => setShow(true)}>Show Message Alert</button>
             <Alert show={show} onClose={() => setShow(false)}>
@@ -21,11 +21,18 @@ export const ReactPortal = () => {
     )
 }
 
-
+/**
+ * We could use the onClickCapture for handling events before the bubble events
+ */
 const Alert = ({ children, onClose, show }) => {
     if (!show) return;
     return createPortal(
-        <div className="alert" onClick={onClose}>
+        <div
+            className="alert"
+            onClickCapture={() => {
+                onClose();
+                console.log("Inner Div")
+            }}>
             {children}
         </div>,
         document.querySelector("#alert-holder")
