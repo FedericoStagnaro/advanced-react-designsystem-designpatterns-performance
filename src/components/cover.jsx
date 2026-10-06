@@ -1,4 +1,4 @@
-import { CoverContainer, Emoji } from "./styled-elements";
+import { CoverContainer, Emoji } from "./styled-elements.update";
 
 const Cover = () => {
   return (

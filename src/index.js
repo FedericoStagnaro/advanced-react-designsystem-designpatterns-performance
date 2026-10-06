@@ -1,41 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Nav from "./components/nav";
+import { mainRoute } from "./components/main";
+import { booksRoute } from "./components/books";
+import Club from "./components/club";
 
-class ErrorBoundary extends React.Component {
-  state = { hasError: false };
+const router = createBrowserRouter([
+  {
+    element: <Nav />,
+    children: [
+      { index: true, ...mainRoute },
+      { path: "/books", ...booksRoute },
+      { path: "/club", element: <Club /> },
+    ],
+  },
+]);
 
-  static getDerivedStateFromError(err) {
-    return { hasError: true }
-  }
-
-  // to handler the details of the error
-  // This approach dont catch errors of asyncronous code
-  componentDidCatch(error) {
-    console.log("[Boundary]", error)
-  }
-
-  render() {
-    if (this.state.hasError) { return this.props.fallback }
-    else { return this.props.children };
-  }
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ErrorBoundary fallback={<h1> Error at app level</h1>}>
-      <App />
-    </ErrorBoundary >
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
-
-
-
