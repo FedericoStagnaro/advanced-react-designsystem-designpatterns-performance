@@ -1,9 +1,9 @@
-import { UseDeferredValueExample } from "./components/use-deferred-value";
+import { UseTransitionExample } from "./components/use-transition";
 
 function App() {
   return (
     <>
-      <UseDeferredValueExample/>
+      <UseTransitionExample/>
     </>
   );
 }
