@@ -1,38 +1,37 @@
 import { useEffect, useState } from "react"
 import { fetchUsers } from "../api/usersAPI"
 import { User } from "../types"
-import { AxiosError } from "axios"
+import { withAsync } from "../helpers/with-async";
+
+type API_STATUS = "IDLE" | "PENDING" | "SUCCESS" | "ERROR";
 
 const useFetchUsers = () => {
     const [users, setUsers] = useState<User[]>([])
-    const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState<AxiosError | null>(null);
     // To much middle states to manage in consumer components
+    const [fetchUsersStatus, setFetchUsersStatus] = useState<API_STATUS>("IDLE")
 
     const initFetchUsers = async () => {
-        try {
-            setIsLoading(true)
-            const response = await fetchUsers()
-            setUsers(response.data)
-        } catch (error) {
-            if (error instanceof AxiosError) setError(error)
+        setFetchUsersStatus("PENDING")
+        const { response, error } = await withAsync(() => fetchUsers())
+        
+        if (error) {
+            setFetchUsersStatus("ERROR")
         }
-        finally {
-            setIsLoading(false)
+        else {
+            setUsers(response)
+            setFetchUsersStatus("SUCCESS")
         }
-
     }
 
     return {
         users,
-        error,
-        isLoading,
+        fetchUsersStatus,
         initFetchUsers
     }
 }
 
 export const Users = () => {
-    const { users, isLoading, initFetchUsers } = useFetchUsers()
+    const { users, fetchUsersStatus, initFetchUsers } = useFetchUsers()
 
     useEffect(() => {
         initFetchUsers()
@@ -40,8 +39,7 @@ export const Users = () => {
 
     return (
         <>
-
-            {isLoading ? <div><p>Is loading...</p></div> : <button onClick={initFetchUsers}>Fetch users</button>}
+            {fetchUsersStatus === "PENDING" ? <div><p>Is loading...</p></div> : <button onClick={initFetchUsers}>Fetch users</button>}
             <div>
                 {
                     users.map((user) => {
